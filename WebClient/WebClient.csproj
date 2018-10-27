@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebAPI\WebAPI.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\api\" />
+    <Folder Include="src\layouts\" />
+    <Folder Include="src\components\" />
+    <Folder Include="src\pages\" />
+    <Folder Include="src\assets\" />
+  </ItemGroup>
+</Project>
