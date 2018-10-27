@@ -21,6 +21,11 @@
     <PackageReference Include="Npgsql" Version="4.0.3" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.1" />
     <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.109.2" />
+    <PackageReference Include="SQLite" Version="3.13.0" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.109.2" />
+    <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.109" />
+    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.109" />
   </ItemGroup>
 
   <ItemGroup>

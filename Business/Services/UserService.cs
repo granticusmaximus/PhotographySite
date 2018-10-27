@@ -64,6 +64,9 @@ namespace Business.Services
             if (_context.Users.Any(x => x.Username == user.Username))
                 throw new AppException("Username \"" + user.Username + "\" is already taken");
 
+            if (_context.Users.Any(x => x.Email == user.Email))
+                throw new AppException("Email \"" + user.Email + "\" is already in use");
+
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
@@ -90,10 +93,18 @@ namespace Business.Services
                     throw new AppException("Username " + userParam.Username + " is already taken");
             }
 
+            if (userParam.Email != user.Email)
+            {
+                // email has changed so check if the new email is already taken
+                if (_context.Users.Any(x => x.Email == userParam.Email))
+                    throw new AppException("Email " + userParam.Email + " is already in use");
+            }
+
             // update user properties
             user.FirstName = userParam.FirstName;
             user.LastName = userParam.LastName;
             user.Username = userParam.Username;
+            user.Email = userParam.Email;
 
             // update password if it was entered
             if (!string.IsNullOrWhiteSpace(password))
